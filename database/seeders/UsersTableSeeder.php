@@ -20,6 +20,7 @@ class UsersTableSeeder extends Seeder
                 'name' => 'Admin',
                 'password' => bcrypt('123456'),
                 'is_admin' => 1,
+                'super_admin' => 1,
             ]
         );
     }

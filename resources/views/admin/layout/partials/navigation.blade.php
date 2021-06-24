@@ -132,6 +132,7 @@
                         </li>
                     </ul>
                 </li>
+                @if(can('settings.view'))
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown"
                         aria-haspopup="true" aria-expanded="false">
@@ -151,6 +152,8 @@
 
                     </ul>
                 </li>
+                @endif
+
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="formsDropdown" role="button" data-toggle="dropdown"
                         aria-haspopup="true" aria-expanded="false">
@@ -158,19 +161,26 @@
                         الاعضاء
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="formsDropdown">
-
+                        @if(can('users.view'))
                         <li>
                             <a class="dropdown-item" href="{{url('admin/users')}}">الاعضاء</a>
                         </li>
+                        @if(can('users.create'))
                         <li>
                             <a class="dropdown-item" href="{{url('admin/users/create')}}">اضافة عضو جديد</a>
                         </li>
+                        @endif
+                        @endif
+                        @if(can('admins.view'))
                         <li>
                             <a class="dropdown-item" href="{{url('admin/admins')}}">المشرفين</a>
                         </li>
+                        @if(can('admins.create'))
                         <li>
                             <a class="dropdown-item" href="{{url('admin/admins/create')}}">اضافة مشرف جديد</a>
                         </li>
+                        @endif
+                        @endif
                     </ul>
                 </li>
                 <li class="nav-item dropdown">
@@ -189,7 +199,7 @@
                         </li>
                     </ul>
                 </li>
-
+                @if(can('categories.view'))
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="layoutsDropdown" role="button"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -198,65 +208,16 @@
                     </a>
                     <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="layoutsDropdown">
                         <li>
-                            <a class="dropdown-toggle sub-nav-link" href="#" id="submenuDropdown" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Opens Right
-                            </a>
-                            <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="submenuDropdown">
-                                <li>
-                                    <a class="dropdown-item" href="chat.html">Submenu 1</a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item" href="icons.html">Submenu 2</a>
-                                </li>
-                            </ul>
+                            <a class="dropdown-item" href="{{url('admin/categories')}}">التحكم بالأقسام</a>
                         </li>
-                        <li class="open-left">
-                            <a class="dropdown-toggle sub-nav-link" href="#" id="submenuLeftDropdown" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Opens Left
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="submenuLeftDropdown">
-                                <li>
-                                    <a class="dropdown-item" href="chat.html">Submenu 1</a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item" href="icons.html">Submenu 2</a>
-                                </li>
-                            </ul>
+                        @if(can('categories.create'))
+                        <li>
+                            <a class="dropdown-item" href="{{url('admin/categories/create')}}">اضافة قسم جديد</a>
                         </li>
+                        @endif
                     </ul>
                 </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="graphsDropdown" role="button"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <i class="icon-pie-chart1 nav-icon"></i>
-                        المواضيع
-                    </a>
-                    <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="graphsDropdown">
-
-                        <li>
-                            <a class="dropdown-item" href="{{url('admin/posts')}}">المواضيع</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="graphsDropdown" role="button"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <i class="icon-pie-chart1 nav-icon"></i>
-                        المدن
-                    </a>
-                    <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="graphsDropdown">
-
-                        <li>
-                            <a class="dropdown-item" href="{{url('admin/cities')}}">المدن</a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" href="{{url('admin/cities/create')}}">اضافة مدينة جديدة</a>
-                        </li>
-
-                    </ul>
-                </li>
+                @endif
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="loginDropdown" role="button" data-toggle="dropdown"
                         aria-haspopup="true" aria-expanded="false">

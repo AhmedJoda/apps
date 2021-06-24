@@ -20,6 +20,9 @@
         </svg>
     </a>
     @endif
+    @if(in_array('edit_permissions',$actions))
+            <a href="{{route('admin.admins.permissions',$id)}}" class="btn btn-success">تعديل الصلاحيات</a>
+    @endif
     @if(in_array('delete',$actions))
     <button data-toggle="modal" data-target="#delete"
         class="p-1 text-red-600 hover:bg-red-600 hover:text-white rounded">

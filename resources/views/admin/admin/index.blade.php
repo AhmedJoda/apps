@@ -20,7 +20,9 @@
             <td>{{$user->name}}</td>
             <td>{{$user->email}}</td>
             <td>
-                <x-actions :actions="['edit','delete']" :route="$route" :id="$user->id" />
+                @if($user->super_admin == 0)
+                <x-actions :actions="['edit','delete','edit_permissions']" :route="$route" :id="$user->id" />
+                @endif
             </td>
         </tr>
         @endforeach
