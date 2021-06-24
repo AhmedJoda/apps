@@ -19,7 +19,7 @@
             <td>{{$post->user->name}}</td>
             <td>{{$post->title}}</td>
             <td>
-                <x-actions :actions="['show']" :route="$route" :id="$post->id" />
+                <x-actions :actions="['show','edit','delete']" :route="$route" :id="$post->id" />
             </td>
         </tr>
         @endforeach

@@ -13,4 +13,5 @@ class PostController extends Controller
     protected $model = Post::class;
     protected $view = 'admin.post';
     protected $route = 'admin.posts';
+    protected $files = ['main_photo'];
 }

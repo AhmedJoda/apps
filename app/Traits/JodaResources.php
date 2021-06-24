@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\File;
 use LogicException;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 trait JodaResources
 {
@@ -141,10 +142,6 @@ trait JodaResources
 
     public function uploadFilesIfExist()
     {
-        if (!file_exists(public_path('uploads'))) {
-            mkdir(public_path('uploads'), 0777, true);
-        }
-
         $data = request()->except("_token", '_method');
         if (isset($this->files)) {
             foreach ($this->files as $file) {
@@ -153,10 +150,9 @@ trait JodaResources
                         auth()->user()->id . '-' .
                         time() . '.' .
                         request()->file($file)->getClientOriginalExtension();
-                    $data[$file] = request()->file($file)->move(
-                        "storage/app/{$this->pluralName}",
-                        $fileName
-                    );
+                    $filePath = "$this->pluralName/$fileName";
+                    $data[$file] = $filePath;
+                    Storage::disk('local')->put($filePath, file_get_contents(request()->$file));
                 }
             }
         }
@@ -166,8 +162,7 @@ trait JodaResources
     {
         if (isset($this->files)) {
             foreach ($this->files as $file) {
-                // dd($model->$file);
-                File::delete($model->$file);
+                Storage::delete($model->$file);
             }
         }
     }

@@ -12,7 +12,7 @@
     <img src="{{getUrl($show->mai_photo)}}" alt="">
     @endif
     <p>
-        {{$show->content}}
+        {!! $show->content !!}
     </p>
 </div>
 

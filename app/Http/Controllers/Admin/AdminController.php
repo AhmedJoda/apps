@@ -35,16 +35,19 @@ class AdminController extends Controller
     public function mergePassword()
     {
         request()->merge([
-            'password' => Hash::make(request()->password)
+            'password' => Hash::make(request()->password),
+            'is_admin' => 1
         ]);
     }
-    public function permissions($id){
+    public function permissions($id)
+    {
         $admin  = Admin::query()->find($id);
-        return view('admin.admin.permissions',compact('admin'));
+        return view('admin.admin.permissions', compact('admin'));
     }
-    public function togglePermissions($id,$code){
+    public function togglePermissions($id, $code)
+    {
         $admin  = Admin::query()->find($id);
-        AdminPermission::toggle($code,$admin);
+        AdminPermission::toggle($code, $admin);
         return back();
     }
 }
