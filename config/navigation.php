@@ -86,5 +86,16 @@ return  [
                 ],
             ]
         ],
+        'contacts' =>  [
+            'title' =>  'رسائل اتصل بنا',
+            'icon'  =>  'icon-layers2 nav-icon',
+            'permission'  =>  'contacts.view',
+            'subs'  =>  [
+                [
+                    'title' =>  'عرض كل الرسائل',
+                    'url'   =>  'admin/contacts',
+                ],
+            ]
+        ],
     ]
 ];

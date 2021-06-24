@@ -28,5 +28,6 @@ Route::resources([
     'posts'         => 'PostController',
     'cities'        => 'CityController',
     'categories'    => 'CategoryController',
+    'contacts'      => 'ContactController',
 ]);
 

@@ -66,6 +66,7 @@ if (!function_exists('permissionsList')) {
                 'cities'        =>  ['create','edit','delete','view'],
                 'posts'         =>  ['delete','view','close'],
                 'reports'       =>  ['delete','view','close'],
+                'contacts'       =>  ['delete','view','close'],
                 'comments'      =>  ['delete','view'],
                 'settings'      =>  ['edit','view'],
             ] ;
