@@ -173,6 +173,22 @@
                         </li>
                     </ul>
                 </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="formsDropdown" role="button" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        <i class="icon-edit1 nav-icon"></i>
+                        الصفحات
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="formsDropdown">
+
+                        <li>
+                            <a class="dropdown-item" href="{{url('admin/about-us')}}">من نحن </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="{{url('admin/conditions')}}">شروط الاشتراك</a>
+                        </li>
+                    </ul>
+                </li>
 
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="layoutsDropdown" role="button"

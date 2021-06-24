@@ -33,6 +33,13 @@
 <script src="{{ asset('public/js/admin.js') }}"></script>
 <script src="{{ asset('public/js/app.js') }}"></script>
 
+<script>
+    ClassicEditor
+        .create(document.querySelector('.editor'))
+        .catch(error => {
+            console.error(error);
+        });
+</script>
 </body>
 
 </html>

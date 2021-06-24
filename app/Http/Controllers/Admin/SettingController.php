@@ -25,6 +25,14 @@ class SettingController extends Controller
     {
         return view('admin.setting.front');
     }
+    public function aboutUs()
+    {
+        return view('admin.setting.about-us');
+    }
+    public function Conditions()
+    {
+        return view('admin.setting.conditions');
+    }
 
     /**
      * Store a newly created resource in storage.

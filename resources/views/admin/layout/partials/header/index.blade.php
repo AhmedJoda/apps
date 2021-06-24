@@ -45,6 +45,7 @@
 	<!-- DateRange css -->
 	<link rel="stylesheet" href="{{asset('assets/dashboard')}}/vendor/daterange/daterange.css" />
 
+	<script src="https://cdn.ckeditor.com/ckeditor5/28.0.0/classic/ckeditor.js"></script>
 
 
 </head>

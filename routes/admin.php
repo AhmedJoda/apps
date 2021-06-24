@@ -9,6 +9,9 @@ Route::get('social-settings', 'SettingController@socialSettings');
 Route::get('front-settings', 'SettingController@frontSettings');
 Route::post('settings', 'SettingController@store');
 
+Route::get('about-us', 'SettingController@aboutUs');
+Route::get('conditions', 'SettingController@Conditions');
+
 Route::resource('users', 'UserController');
 Route::resource('admins', 'AdminController');
 
