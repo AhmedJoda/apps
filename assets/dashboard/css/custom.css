@@ -1,0 +1,6 @@
+body {
+    font-family: 'DroidArabicKufiRegular';
+}
+.v--modal-overlay .v--modal-background-click {
+    direction: ltr;
+}
