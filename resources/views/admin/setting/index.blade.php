@@ -49,7 +49,7 @@
 
             <div cl ass="form-group">
                 <label for="">عدد المواضيع المجانية </label>
-                {!! Form::number('free_posts', old('free_posts') ,['class' => 'form-control']) !!}
+                {!! Form::number('free_posts', setting('free_posts') ,['class' => 'form-control']) !!}
             </div>
     </div>
 
