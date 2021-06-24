@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Models\Admin;
+use App\Models\AdminPermission;
 use App\Traits\JodaResources;
 use App\Http\Controllers\Controller;
 use App\Models\User;
@@ -24,7 +26,7 @@ class AdminController extends Controller
     {
         $this->mergePassword();
     }
-    
+
     public function beforeUpdate()
     {
         $this->mergePassword();
@@ -35,5 +37,14 @@ class AdminController extends Controller
         request()->merge([
             'password' => Hash::make(request()->password)
         ]);
+    }
+    public function permissions($id){
+        $admin  = Admin::query()->find($id);
+        return view('admin.admin.permissions',compact('admin'));
+    }
+    public function togglePermissions($id,$code){
+        $admin  = Admin::query()->find($id);
+        AdminPermission::toggle($code,$admin);
+        return back();
     }
 }

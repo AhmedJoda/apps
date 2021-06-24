@@ -14,6 +14,9 @@ Route::get('conditions', 'SettingController@Conditions');
 
 Route::resource('users', 'UserController');
 Route::resource('admins', 'AdminController');
+Route::get('admins/{id}/permissions','AdminController@permissions')->name('admins.permissions');
+Route::get('admins/{id}/permissions/{code}','AdminController@togglePermissions')->name('admins.permissions.toggle');
+Route::resource('categories', 'CategoryController');
 
 Route::get('/profile', 'ProfileController@index');
 Route::post('/profile', 'ProfileController@store');
