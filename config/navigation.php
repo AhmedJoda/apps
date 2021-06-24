@@ -86,6 +86,33 @@ return  [
                 ],
             ]
         ],
+        'cities' =>  [
+            'title' =>  'المدن',
+            'icon'  =>  'icon-layers2 nav-icon',
+            'permission'  =>  'cities.view',
+            'subs'  =>  [
+                [
+                    'title' =>  'التحكم بالمدن',
+                    'url'   =>  'admin/cities',
+                ],
+                [
+                    'title' =>  'اضافة مدينة جديدة',
+                    'url'   =>  'admin/cities/create',
+                    'permission'    =>  'cities.create',
+                ],
+            ]
+        ],
+        'posts' =>  [
+            'title' =>  'المواضيع',
+            'icon'  =>  'icon-layers2 nav-icon',
+            'permission'  =>  'posts.view',
+            'subs'  =>  [
+                [
+                    'title' =>  'التحكم بالمواضيع',
+                    'url'   =>  'admin/posts',
+                ],
+            ]
+        ],
         'contacts' =>  [
             'title' =>  'رسائل اتصل بنا',
             'icon'  =>  'icon-layers2 nav-icon',
