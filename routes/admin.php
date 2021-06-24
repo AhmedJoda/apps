@@ -22,8 +22,11 @@ Route::get('/profile', 'ProfileController@index');
 Route::post('/profile', 'ProfileController@store');
 
 // resources
-Route::resource('users', 'UserController');
-Route::resource('admins', 'AdminController');
-Route::resource('posts', 'PostController');
-Route::resource('cities', 'CityController');
-Route::resource('categories', 'CategoryController');
+Route::resources([
+    'users'         => 'UserController',
+    'admins'        => 'AdminController',
+    'posts'         => 'PostController',
+    'cities'        => 'CityController',
+    'categories'    => 'CategoryController',
+]);
+
