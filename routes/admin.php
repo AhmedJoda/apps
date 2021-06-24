@@ -12,8 +12,12 @@ Route::post('settings', 'SettingController@store');
 Route::get('about-us', 'SettingController@aboutUs');
 Route::get('conditions', 'SettingController@Conditions');
 
-Route::resource('users', 'UserController');
-Route::resource('admins', 'AdminController');
 
 Route::get('/profile', 'ProfileController@index');
 Route::post('/profile', 'ProfileController@store');
+
+
+Route::resource('users', 'UserController');
+Route::resource('admins', 'AdminController');
+Route::resource('posts', 'PostController');
+Route::resource('cities', 'CityController');
